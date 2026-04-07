@@ -1,11 +1,4 @@
-<<<<<<< HEAD
 flask
 flask-socketio
 eventlet
 gunicorn
-=======
-flask
-flask-socketio
-eventlet
-gunicorn
->>>>>>> d7787a5e98744b2470300549aa6205164369e174
