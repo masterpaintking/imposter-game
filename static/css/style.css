@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto:wght@400&display=swap');
+body {
+    background-color: #1C1C28;   
+    color: #EAEAEA;              
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: linear-gradient(135deg, #1C1C28, #2A2A3C);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+}
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #F4A261;              
+    margin-bottom: 10px;
+}
+
+/* Buttons */
+button {
+    background-color: #2A9D8F;   /* teal accent */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background-color: #21867a;   /* darker teal */
+    transform: scale(1.05);
+}
+
+/* Special buttons */
+.create-btn, .player-vote-btn {
+    background-color: #E63946;   /* red accent */
+}
+
+.create-btn:hover, .player-vote-btn:hover {
+    background-color: #b92c38;   /* darker red */
+}
+
+.buttons{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ gap: 10px;
+}
+.join{
+ display: flex;
+ flex-direction: row;
+ width: 100%;
+}
+.create-btn{
+    width: 100%;
+}
+.content{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+.room-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 80vh;
+}
+.message-box{
+    flex: 3;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    background-color: #2A2A3C;   /* dark gray panel */
+    border: 2px solid #444;
+    border-radius: 10px;
+    color: #EAEAEA;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    align-items: stretch;
+}
+.messages{
+    overflow-y: scroll;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 12px; 
+}
+.inputs{
+    padding: 10px;
+    display: flex;
+}
+h2{
+    text-align: center;
+}
+#message{
+    flex: 1;
+}
+/* Input fields */
+input[type="text"], input[type="password"], textarea {
+    background-color: #2A2A3C;   /* dark panel background */
+    color: #EAEAEA;              /* light text */
+    border: 1px solid #444;      /* subtle border */
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: 'Roboto', sans-serif;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Placeholder text */
+input::placeholder, textarea::placeholder {
+    color: #aaa;                 /* softer gray for placeholder */
+}
+
+/* Focus effect */
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #2A9D8F;       /* teal highlight */
+    box-shadow: 0 0 6px #2A9D8F;
+}
+
+.player-list{
+    flex:1 ;
+    background-color: #2A2A3C;
+    border: 1px solid #444;
+    color: #EAEAEA;
+    border-radius: 8px;
+    padding: 8px;
+    max-height: 250px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.player-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 6px 8px;
+    border-bottom: 1px solid #444;
+}
+
+.player-row:last-child{
+    border-bottom: none;
+}
+
+.player-name{
+    font-weight: bold;
+    flex: 1;
+    color: #F4A261;
+}
+
+.player-votes{
+    min-width: 70px;
+    text-align: right;
+}
+
+/* Custom scrollbar for chat and player list */
+.messages::-webkit-scrollbar,
+.player-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.messages::-webkit-scrollbar-track,
+.player-list::-webkit-scrollbar-track {
+    background: #1C1C28;   /* dark track */
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb,
+.player-list::-webkit-scrollbar-thumb {
+    background: #2A9D8F;   /* teal thumb */
+    border-radius: 4px;
+}
+
+.messages::-webkit-scrollbar-thumb:hover,
+.player-list::-webkit-scrollbar-thumb:hover {
+    background: #21867a;   /* darker teal on hover */
+}
+
+/* Timer progress bar container */
+.timer-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #444;   /* dark track */
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+/* The actual bar that shrinks */
+.timer-fill {
+    height: 100%;
+    background-color: #2A9D8F; /* teal default */
+    transition: width 1s linear;
+}
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 5px #F4A261;
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 15px #F4A261;
+        transform: scale(1.05);
+    }
+    100% {
+        box-shadow: 0 0 5px #F4A261;
+        transform: scale(1);
+    }
+}
+
+/* Apply when active */
+.pulse-warning {
+    animation: pulse 1s infinite;
+}
+
+/* Fade-in animation for new messages */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text {
+    animation: fadeIn 0.3s ease forwards;
+    margin-bottom: 8px;   /* space under each message */
+}
+
+
