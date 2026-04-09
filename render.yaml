@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: imposter-game
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -k eventlet -w 1 main:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
